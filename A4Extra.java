@@ -1,6 +1,6 @@
 
 public class A4Extra {
-	public static int missingNumber(int[] nums) {
+	public static int missingNumber(int[] nums) {              //miss one corner case: if nums is {0}, you should return 1
 		int lo = 0, hi = nums.length-1;
 		while(lo <= hi) {
 			int mid = lo + (hi-lo)/2;
@@ -10,7 +10,7 @@ public class A4Extra {
 		return lo == nums.length ? -1 : lo;
 	}
 	
-	public static void moveZeroes(int[] nums) {
+	public static void moveZeroes(int[] nums) {      //correct
         int len = nums.length;
         for(int i = 1; i < len; i++) {
         	for(int j = i; j > 0 && nums[j-1] == 0; j--) {
